@@ -333,6 +333,24 @@
       background: var(--fern);
       animation: livePulse 2s ease infinite;
     }
+    .pf-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: auto; align-self: flex-start;
+      font-size: 13px; font-weight: 600; color: var(--fern);
+      text-decoration: none; border-bottom: 1px solid rgba(40,86,56,0.3);
+      padding-bottom: 2px; transition: border-color 0.2s;
+    }
+    .pf-link:hover { border-color: var(--fern); }
+    .ps-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: none; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px; font-weight: 600; color: var(--fern);
+      border-bottom: 1px solid rgba(40,86,56,0.3);
+      padding: 0 0 2px; transition: border-color 0.2s;
+    }
+    .ps-link:hover { border-color: var(--fern); }
+
     @keyframes livePulse {
       0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(40,86,56,0.4); }
       50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(40,86,56,0); }
@@ -995,7 +1013,7 @@
           <h3>EEOC &amp; State Agency Charges</h3>
           <p>Draft a complete, cite-checked Position Statement in hours, not days. Every factual claim traced to your documents. Every defense grounded in the record you'll need if it escalates.</p>
         </div>
-
+        <a href="/charges/" class="pf-link">See how it works →</a>
       </div>
       <div class="pf-visual pf-visual-screens">
         <div class="screen-stack">
@@ -1042,6 +1060,7 @@
           <span class="ps-tag">Demand Letters</span>
           <h3>Demand Letters</h3>
           <p>Respond decisively. Fern connects the law to your specific facts — with citations to every document — in a way that holds up if it escalates.</p>
+          <button class="ps-link" data-tally-open="yPdzY6" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Join waitlist →</button>
         </div>
         <div class="ps-visual">
           <div class="mock-demand">
@@ -1267,10 +1286,9 @@
 <section class="section-build">
   <div class="build-inner">
     <div class="r">
-      <div class="build-kicker">Build what's next</div>
       <h2>Help us build.</h2>
-      <p>Have a workflow we haven't solved yet? A feature that would change how your team handles employment matters?</p>
-      <p>Want to help shape the product directly as a Customer Advisory Board member? Board members get early access, direct input on the roadmap, and a seat at the table as we build.</p>
+      <p>Have a workflow we haven't solved yet?</p>
+      <p>Want to shape the product as a Customer Advisory Board member? Early access, direct roadmap input, and a seat at the table.</p>
     </div>
     <div class="r d1">
       <iframe
