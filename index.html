@@ -943,6 +943,14 @@
       min-height: 280px;
     }
 
+    /* ── 60-SECOND OVERVIEW ── */
+    .section-video { background: var(--off-white); padding: 120px 56px 0; }
+    .video-inner { max-width: 920px; margin: 0 auto; }
+    .video-kicker { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .video-frame { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 12px 40px rgba(0,0,0,0.08); background: #000; line-height: 0; }
+    .video-frame video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; }
+    @media (max-width: 640px) { .section-video { padding: 72px 20px 0; } }
+
   </style>
 </head>
 <body>
@@ -988,6 +996,20 @@
       <span class="for-tag p">General Counsel</span>
       <span class="for-tag p">Chief Human Resources Officers</span>
       <span class="for-tag p">Employment Paralegals</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- 60-SECOND OVERVIEW -->
+<section class="section-video">
+  <div class="video-inner">
+    <div class="video-kicker r">The 60-second overview</div>
+    <div class="video-frame r d1">
+      <video controls preload="metadata" playsinline poster="./assets/fern-overview-poster.jpg" aria-label="Fern 60-second overview video">
+        <source src="./assets/fern-overview.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="./assets/fern-overview.mp4">Download the overview video</a>.
+      </video>
     </div>
   </div>
 </section>
@@ -1091,7 +1113,7 @@
 
 
 <!-- ADVISORY BOARD -->
-<section class="section-advisory">
+<section class="section-advisory" id="advisory">
   <div class="advisory-inner">
 
     <div class="advisory-intro">
