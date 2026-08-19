@@ -149,7 +149,7 @@
 
     .hero-bottom {
       display: flex; align-items: flex-end;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 48px;
       animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.22s both;
     }
@@ -210,12 +210,19 @@
     /* ─── BUILT FOR ────────────────────────────────── */
     .section-for {
       background: var(--forest);
-      padding: 52px 56px;
+      padding: 64px 56px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .for-inner {
-      max-width: 1300px; margin: 0 auto;
+    .for-inner { max-width: 1300px; margin: 0 auto; }
+    .for-statement {
+      font-size: 18px; font-weight: 300; line-height: 1.7;
+      color: rgba(255,255,255,0.72);
+      max-width: 860px; margin-bottom: 40px;
+    }
+    .for-statement strong { color: #fff; font-weight: 500; }
+    .for-meta {
       display: flex; align-items: center; gap: 48px;
+      padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.09);
     }
     .for-label {
       font-size: 11px; font-weight: 700;
@@ -276,7 +283,7 @@
     /* ─── PRODUCTS ─────────────────────────────────── */
     .section-products {
       background: var(--off-white);
-      padding: 88px 56px 140px;
+      padding: 88px 56px 120px;
     }
     .products-inner { max-width: 1300px; margin: 0 auto; }
 
@@ -331,17 +338,6 @@
       font-size: 16px; font-weight: 300; color: var(--mid);
       line-height: 1.75; margin-bottom: 40px; max-width: 420px;
     }
-    .products-closer {
-      margin-top: 88px; padding-top: 56px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    .products-closer h2 {
-      font-family: 'Newsreader', serif;
-      font-size: clamp(34px, 3.6vw, 52px);
-      font-weight: 300; line-height: 1.15; letter-spacing: -0.5px;
-    }
-    .products-closer h2 em { font-style: italic; color: var(--fern); }
     .pf-status {
       display: flex; align-items: center; gap: 8px;
       font-size: 13px; font-weight: 600; color: var(--fern);
@@ -353,13 +349,20 @@
       animation: livePulse 2s ease infinite;
     }
     .pf-link {
-      display: inline-flex; align-items: center; gap: 6px;
+      display: inline-flex; align-items: center; gap: 8px;
       margin-top: auto; align-self: flex-start;
-      font-size: 13px; font-weight: 600; color: var(--fern);
-      text-decoration: none; border-bottom: 1px solid rgba(40,86,56,0.3);
-      padding-bottom: 2px; transition: border-color 0.2s;
+      padding: 16px 36px;
+      background: var(--fern); color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 16px; font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .pf-link:hover { border-color: var(--fern); }
+    .pf-link:hover {
+      background: var(--forest);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(40,86,56,0.22);
+    }
     .ps-link {
       display: inline-flex; align-items: center; gap: 6px;
       background: none; border: none; cursor: pointer;
@@ -467,6 +470,47 @@
     .md-amount { font-size: 11px; font-weight: 700; color: #b91c1c; margin-bottom: 10px; margin-top: 4px; }
     .md-resp { margin-top: 10px; padding: 10px; background: #e6f0e4; border-radius: 4px; }
     .md-rl { font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--fern); margin-bottom: 7px; }
+
+    /* ─── LEGAL OPERATIONS ─────────────────────────── */
+    .section-legalops {
+      background: var(--off-white);
+      padding: 120px 56px;
+      border-top: 1px solid var(--border);
+    }
+    .legalops-inner { max-width: 1300px; margin: 0 auto; }
+    .lo-kicker {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--fern); margin-bottom: 20px;
+    }
+    .legalops-inner h2 {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(36px, 3.8vw, 52px);
+      font-weight: 400; line-height: 1.15;
+      letter-spacing: -0.5px; max-width: 22ch; margin-bottom: 56px;
+    }
+    .legalops-inner h2 em { font-style: italic; color: var(--fern); }
+    .lo-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
+    }
+    .lo-tile { background: white; padding: 40px 36px; }
+    .lo-tile-name {
+      font-size: 13px; font-weight: 700; color: var(--text);
+      margin-bottom: 18px;
+    }
+    .lo-list { list-style: none; display: flex; flex-direction: column; }
+    .lo-list li {
+      display: flex; align-items: baseline; gap: 12px;
+      padding: 11px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.6;
+    }
+    .lo-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .lo-list li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--fern-pale); flex-shrink: 0;
+      transform: translateY(-2px);
+    }
 
     /* ─── RELIABILITY ──────────────────────────────── */
     .section-reliability {
@@ -892,6 +936,7 @@
       .company-team { grid-template-columns: 1fr; gap: 40px; }
       .advisory-intro { grid-template-columns: 1fr; gap: 48px; }
       .advisory-sectors { grid-template-columns: repeat(2, 1fr); }
+      .lo-grid { grid-template-columns: 1fr; }
       .team-inner { grid-template-columns: 1fr; gap: 48px; }
       .build-inner { grid-template-columns: 1fr; gap: 56px; }
       .footer-top { grid-template-columns: 1fr; gap: 48px; }
@@ -903,7 +948,8 @@
     @media (max-width: 640px) {
       .company-meta { grid-template-columns: 1fr; }
       .advisory-sectors { grid-template-columns: 1fr; }
-      .for-inner { flex-direction: column; gap: 20px; }
+      .for-meta { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .for-divider { display: none; }
       .trial-btns { flex-direction: column; }
       .hero h1 { letter-spacing: -1px; }
     }
@@ -1079,11 +1125,8 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-kicker">Reliable AI for employment lawyers</div>
-    <h1>Purpose-built<br>for employment<br>law <em>disputes.</em></h1>
+    <h1>Purpose-built for<br><em>employment law</em><br>disputes.</h1>
     <div class="hero-bottom">
-      <p class="hero-desc">
-        <strong>Tools for the workflows that consume the most time.</strong>
-      </p>
       <div class="hero-actions">
         <button class="btn-hero-primary" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
         <a href="https://calendly.com/sunita-parbhu/1-1-15-mins?" target="_blank" rel="noopener" class="btn-hero-ghost">Speak with us</a>
@@ -1097,6 +1140,8 @@
 <!-- BUILT FOR -->
 <section class="section-for">
   <div class="for-inner">
+    <p class="for-statement r">Fern specifically helps resolve <strong>employment law disputes</strong>, whether it's responding to allegations brought to a government agency, or responding to allegations brought by a private lawyer in a demand letter. Fern is a tool for the workflows that carry a risk of litigation or a drawn-out dispute.</p>
+    <div class="for-meta r d1">
     <span class="for-label">Built for</span>
     <div class="for-divider"></div>
     <div class="for-tags">
@@ -1104,6 +1149,7 @@
       <span class="for-tag p">General Counsel</span>
       <span class="for-tag p">Chief Human Resources Officers</span>
       <span class="for-tag p">Employment Paralegals</span>
+    </div>
     </div>
   </div>
 </section>
@@ -1237,10 +1283,6 @@
       </div>
 
     </div>
-
-    <div class="products-closer r">
-      <h2>Every output cited.<br><em>Every claim sourced.</em></h2>
-    </div>
   </div>
 </section>
 
@@ -1309,8 +1351,8 @@
 <!-- RELIABILITY -->
 <section class="section-reliability">
   <div class="reliability-inner">
-    <div class="r">
-      <h2>Why reliability<br>is not a<br><em>feature.</em></h2>
+    <div class="reliability-left r">
+      <h2>Reliability is<br>the whole<br><em>product.</em></h2>
     </div>
     <div class="reliability-right">
       <div class="reliability-item r">
@@ -1333,6 +1375,42 @@
           <h4>Immediate, measurable ROI</h4>
           <p>The value is in the first matter you run — not at the end of a six-month implementation.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOR LEGAL OPERATIONS -->
+<section class="section-legalops">
+  <div class="legalops-inner">
+    <div class="r">
+      <div class="lo-kicker">For legal operations</div>
+      <h2>Start on Monday.<br><em>Not next quarter.</em></h2>
+    </div>
+    <div class="lo-grid r d1">
+      <div class="lo-tile">
+        <div class="lo-tile-name">Adoption</div>
+        <ul class="lo-list">
+          <li>Live in a day, no expensive enterprise rollout</li>
+          <li>Browser portal, users get instant access</li>
+          <li>Per-matter pricing</li>
+        </ul>
+      </div>
+      <div class="lo-tile">
+        <div class="lo-tile-name">Data</div>
+        <ul class="lo-list">
+          <li>No training on your data</li>
+          <li>Secure vault</li>
+          <li>Need-to-know access</li>
+        </ul>
+      </div>
+      <div class="lo-tile">
+        <div class="lo-tile-name">Fits your stack</div>
+        <ul class="lo-list">
+          <li>HR system of record</li>
+          <li>Microsoft and Google environments</li>
+        </ul>
       </div>
     </div>
   </div>
