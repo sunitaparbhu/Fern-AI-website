@@ -90,11 +90,11 @@
 
     /* ─── HERO ─────────────────────────────────────── */
     .hero {
-      min-height: 100vh;
+      min-height: 88vh;
       background: var(--ink);
       display: flex; flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 56px 80px;
+      justify-content: center;
+      padding: 140px 56px 88px;
       position: relative; overflow: hidden;
     }
 
@@ -118,8 +118,15 @@
     }
 
     .hero-inner {
-      max-width: 1300px; width: 100%;
+      max-width: 1300px; width: 100%; margin: 0 auto;
       position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1.35fr 1fr;
+      gap: 56px; align-items: center;
+    }
+    .hero-visual { display: flex; justify-content: flex-end; }
+    .hero-visual .matter-card {
+      max-width: 420px;
+      animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s both;
     }
 
     .hero-kicker {
@@ -137,10 +144,10 @@
 
     .hero h1 {
       font-family: 'Newsreader', serif;
-      font-size: clamp(60px, 7.5vw, 112px);
-      font-weight: 300; line-height: 0.97;
-      letter-spacing: -2px; color: white;
-      margin-bottom: 52px;
+      font-size: clamp(40px, 4.6vw, 68px);
+      font-weight: 300; line-height: 1.02;
+      letter-spacing: -1.4px; color: white;
+      margin-bottom: 44px;
       animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.1s both;
     }
     .hero h1 em {
@@ -506,6 +513,29 @@
       font-size: 14px; font-weight: 300; color: var(--mid); line-height: 1.6;
     }
     .lo-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .lo-cta {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 48px;
+    }
+    .btn-lo-primary {
+      padding: 15px 34px; background: var(--fern); color: #fff;
+      border: none; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-lo-primary:hover {
+      background: var(--forest); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(40,86,56,0.22);
+    }
+    .btn-lo-soft {
+      padding: 15px 28px; background: transparent; color: var(--mid);
+      border: 1px solid var(--border); border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px; font-weight: 500;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-lo-soft:hover { border-color: var(--fern); color: var(--fern); }
     .lo-list li::before {
       content: ''; width: 5px; height: 5px; border-radius: 50%;
       background: var(--fern-pale); flex-shrink: 0;
@@ -922,10 +952,12 @@
     /* ─── RESPONSIVE ───────────────────────────────── */
     @media (max-width: 1000px) {
       nav { padding: 0 28px; }
-      .hero, .section-for, .section-quote, .section-products,
+      .hero, .section-for, .section-quote, .section-products, .section-legalops,
       .section-reliability, .section-company, .section-advisory,
       .section-team, .section-trial, .section-build { padding-left: 28px; padding-right: 28px; }
       .hero { padding-bottom: 64px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { justify-content: flex-start; }
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .product-featured { grid-template-columns: 1fr; }
       .pf-visual { border-left: none; border-top: 1px solid var(--border); min-height: 260px; }
@@ -1098,12 +1130,10 @@
     }
 
     /* ── 60-SECOND OVERVIEW ── */
-    .section-video { background: var(--off-white); padding: 88px 56px 32px; }
-    .video-inner { max-width: 1120px; margin: 0 auto; }
+    .products-video { margin-bottom: 20px; padding: 56px 0 12px; }
     .video-kicker { text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
     .video-frame { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 12px 40px rgba(0,0,0,0.08); background: #000; line-height: 0; }
     .video-frame video { width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; }
-    @media (max-width: 640px) { .section-video { padding: 64px 20px 24px; } }
 
   </style>
 </head>
@@ -1115,6 +1145,7 @@
     <img src="./assets/fern-logo.svg" alt="Fern">
   </a>
   <div class="nav-right">
+    <a href="/charges/" class="nav-link">Agency Charges</a>
     <a href="https://learnwithfern.substack.com" target="_blank" rel="noopener" class="nav-link">Newsletter</a>
     <button class="nav-cta" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial</button>
   </div>
@@ -1124,12 +1155,56 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-kicker">Reliable AI for employment lawyers</div>
-    <h1>Purpose-built for<br><em>employment law</em><br>disputes.</h1>
+    <div class="hero-copy">
+    <div class="hero-kicker">Reliable AI for employment law disputes</div>
+    <h1>Your Next<br>Position Statement:<br><em>2 Hours, Not 20.</em></h1>
     <div class="hero-bottom">
       <div class="hero-actions">
         <button class="btn-hero-primary" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
         <a href="https://calendly.com/sunita-parbhu/1-1-15-mins?" target="_blank" rel="noopener" class="btn-hero-ghost">Speak with us</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="matter-card">
+        <div class="matter-card-header">
+          <div class="matter-card-header-left">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="1" width="12" height="14" rx="2" fill="none" stroke="white" stroke-width="1.5"/><line x1="5" y1="5" x2="11" y2="5" stroke="white" stroke-width="1"/><line x1="5" y1="7.5" x2="11" y2="7.5" stroke="white" stroke-width="1"/><line x1="5" y1="10" x2="9" y2="10" stroke="white" stroke-width="1"/></svg>
+            <span>ACTIVE CHARGE</span>
+          </div>
+          <div class="matter-card-header-badge">
+            <span class="matter-card-header-badge-dot"></span>
+            18 DAYS LEFT
+          </div>
+        </div>
+        <div class="matter-card-body">
+          <div class="matter-title">Rivera v. ValueMart, Inc.</div>
+          <div class="matter-charge">EEOC Charge No. 450-2026-02417</div>
+          <div class="matter-rows">
+            <div class="matter-row">
+              <span class="matter-row-label">Jurisdiction</span>
+              <span class="matter-row-value">Dallas EEOC District Office</span>
+            </div>
+            <div class="matter-row">
+              <span class="matter-row-label">Statutes</span>
+              <span class="matter-row-value">Title VII · ADA</span>
+            </div>
+            <div class="matter-row">
+              <span class="matter-row-label">Response deadline</span>
+              <span class="urgent-pill"><span class="urgent-pill-dot"></span> 18 days left</span>
+            </div>
+            <div class="matter-row">
+              <span class="matter-row-label">Allegations</span>
+              <span class="matter-row-value">3 claims identified</span>
+            </div>
+          </div>
+          <div class="claims-row">
+            <span class="claim-chip">Retaliation</span>
+            <span class="claim-chip">Hostile Work Env. – Sex</span>
+            <span class="claim-chip">Failure to Accommodate</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1140,9 +1215,9 @@
 <!-- BUILT FOR -->
 <section class="section-for">
   <div class="for-inner">
-    <p class="for-statement r">Fern specifically helps resolve <strong>employment law disputes</strong>, whether it's responding to allegations brought to a government agency, or responding to allegations brought by a private lawyer in a demand letter. Fern is a tool for the workflows that carry a risk of litigation or a drawn-out dispute.</p>
+    <p class="for-statement r">Fern is <strong>AI purpose-built to resolve employment law disputes</strong> — AI that reads the allegations, analyzes your documents, and drafts the response — whether you're responding to allegations brought to a government agency or allegations brought by a private lawyer in a demand letter. It's built for the workflows that carry a risk of litigation or a drawn-out dispute.</p>
     <div class="for-meta r d1">
-    <span class="for-label">Built for</span>
+    <span class="for-label">AI built for</span>
     <div class="for-divider"></div>
     <div class="for-tags">
       <span class="for-tag p">In-house Employment Lawyers</span>
@@ -1155,27 +1230,13 @@
 </section>
 
 
-<!-- 60-SECOND OVERVIEW -->
-<section class="section-video">
-  <div class="video-inner">
-    <div class="video-kicker r">The 60-second overview</div>
-    <div class="video-frame r d1">
-      <video controls preload="metadata" playsinline poster="./assets/fern-overview-poster.jpg" aria-label="Fern 60-second overview video">
-        <source src="./assets/fern-overview.mp4" type="video/mp4">
-        Your browser does not support embedded video. <a href="./assets/fern-overview.mp4">Download the overview video</a>.
-      </video>
-    </div>
-  </div>
-</section>
-
-
 <!-- PRODUCTS -->
 <section class="section-products">
   <div class="products-inner">
 
     <div class="products-header r">
-      <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--fern);margin-bottom:20px;">What we build</div>
-      <h2>Your Next Position Statement:<br><em>2 Hours, Not 20.</em></h2>
+      <div style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--fern);margin-bottom:20px;">How Fern helps</div>
+      <h2>Get the response out.<br><em>Get your week back.</em></h2>
     </div>
 
     <!-- FEATURED: Agency Charges (ported from /charges/ hero) -->
@@ -1228,6 +1289,17 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- 60-SECOND OVERVIEW -->
+    <div class="products-video r">
+      <div class="video-kicker">The 60-second overview</div>
+      <div class="video-frame">
+        <video controls preload="metadata" playsinline poster="./assets/fern-overview-poster.jpg" aria-label="Fern 60-second overview video">
+          <source src="./assets/fern-overview.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="./assets/fern-overview.mp4">Download the overview video</a>.
+        </video>
       </div>
     </div>
 
@@ -1352,7 +1424,7 @@
 <section class="section-reliability">
   <div class="reliability-inner">
     <div class="reliability-left r">
-      <h2>Reliability is<br>the whole<br><em>product.</em></h2>
+      <h2>Reliability<br>you can<br><em>count on.</em></h2>
     </div>
     <div class="reliability-right">
       <div class="reliability-item r">
@@ -1381,6 +1453,16 @@
 </section>
 
 
+<!-- QUOTE -->
+<section class="section-quote">
+  <div class="quote-inner">
+    <div class="quote-number r">"</div>
+    <p class="quote-text r">"I have not seen any AI products that have impacted my day to day — until Fern."</p>
+    <p class="quote-attr r d1">— <strong>Assistant General Counsel, Employment, Labor &amp; Litigation</strong></p>
+  </div>
+</section>
+
+
 <!-- FOR LEGAL OPERATIONS -->
 <section class="section-legalops">
   <div class="legalops-inner">
@@ -1392,11 +1474,8 @@
       <div class="lo-tile">
         <div class="lo-tile-name">Adoption</div>
         <ul class="lo-list">
-          <li>No enterprise rollout</li>
-          <li>No IT project</li>
-          <li>Nothing to install</li>
-          <li>Live in a day</li>
-          <li>Browser portal</li>
+          <li>Live in a day, no expensive enterprise rollout</li>
+          <li>Browser portal, users get instant access</li>
           <li>Per-matter pricing</li>
         </ul>
       </div>
@@ -1416,16 +1495,10 @@
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-
-<!-- QUOTE -->
-<section class="section-quote">
-  <div class="quote-inner">
-    <div class="quote-number r">"</div>
-    <p class="quote-text r">"I have not seen any AI products that have impacted my day to day — until Fern."</p>
-    <p class="quote-attr r d1">— <strong>Assistant General Counsel, Employment, Labor &amp; Litigation</strong></p>
+    <div class="lo-cta r d2">
+      <button class="btn-lo-primary" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
+      <a href="https://calendly.com/sunita-parbhu/1-1-15-mins?" target="_blank" rel="noopener" class="btn-lo-soft">Speak with us</a>
+    </div>
   </div>
 </section>
 
@@ -1522,7 +1595,7 @@
 <section class="section-build">
   <div class="build-inner">
     <div class="r">
-      <h2>Help us build.</h2>
+      <h2>Tell us what you need next.</h2>
       <p>Have a workflow we haven't solved yet?</p>
       <p>Want to shape the product as a Customer Advisory Board member? Early access, direct roadmap input, and a seat at the table.</p>
     </div>
