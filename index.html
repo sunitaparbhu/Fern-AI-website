@@ -1440,6 +1440,103 @@
     .pp-link { display: inline-block; margin-left: 16px; font-size: 14px; color: #fff; text-underline-offset: 3px; }
     @media (max-width: 1000px) { .claims-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
     @media (max-width: 560px)  { .claims-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pp-link { margin: 14px 0 0; display: block; } }
+    .claim img { display: block; }
+    .claim.soon img { opacity: 0.5; }
+    .claim-soon {
+      margin-top: -6px; font-size: 12px; font-weight: 600;
+      padding: 3px 10px; border-radius: 999px; background: #f6e7d4; color: #7a4a12;
+    }
+
+    /* ─── v1: TOP PROJECT, original stacked layout ─── */
+    .project-split {
+      max-width: 1300px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start;
+    }
+    .section-project h2 em { font-style: italic; color: var(--sage); }
+    .focus-list { display: flex; flex-direction: column; gap: 12px; max-width: 580px; }
+    .focus-option {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      text-align: left; cursor: pointer; font: inherit;
+      padding: 18px 22px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.04); color: #fff;
+      transition: background .2s, border-color .2s, color .2s, transform .2s;
+    }
+    .focus-option:hover { border-color: rgba(255,255,255,0.5); transform: translateX(2px); }
+    .focus-option:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+    .focus-option[aria-pressed="true"] { background: #fff; color: var(--text); border-color: #fff; }
+    .fo-title { display: block; font-family: 'Newsreader', serif; font-size: 23px; line-height: 1.2; }
+    .fo-sub { display: block; margin-top: 4px; font-size: 14px; line-height: 1.5; opacity: 0.72; }
+    .fo-arrow { font-size: 18px; opacity: 0.6; }
+    .focus-skip {
+      display: inline-block; margin-top: 22px;
+      font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px;
+    }
+    .focus-skip:hover { color: #fff; }
+    .focus-panel {
+      width: 100%; max-width: 460px;
+      background: white; color: var(--text);
+      border-radius: 12px; padding: 30px 30px 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      animation: fadeUp .5s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .fp-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--fern); }
+    .fp-head { font-family: 'Newsreader', serif; font-weight: 400; font-size: 28px; line-height: 1.2; margin: 10px 0 14px; }
+    .fp-quote { font-family: 'Newsreader', serif; font-style: italic; font-size: 18px; line-height: 1.5; color: var(--mid); margin: 0 0 18px; }
+    .fp-steps { margin: 0 0 24px; padding-left: 20px; font-size: 15px; line-height: 1.6; color: var(--text); }
+    .fp-steps li { margin-bottom: 6px; }
+    .fp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+    .fp-cta {
+      display: inline-block; padding: 12px 20px; border-radius: 6px;
+      background: var(--fern); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none;
+    }
+    .fp-jump { font-size: 14px; color: var(--fern); text-decoration: underline; text-underline-offset: 3px; }
+    .focus-panel { max-width: none; animation: none; }
+    .focus-panel[hidden] { display: none; }
+    .fp-head { font-size: 32px; }
+    .fp-way { padding: 18px 0; border-top: 1px solid var(--border); }
+    .fp-way:last-child { padding-bottom: 0; }
+    .fp-way h4 { font-family: 'Newsreader', serif; font-weight: 400; font-size: 21px; line-height: 1.25; margin-bottom: 6px; }
+    .fp-way p { font-size: 15px; line-height: 1.6; color: var(--mid); margin-bottom: 14px; }
+    button.fp-cta { border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    @media (prefers-reduced-motion: no-preference) {
+      .focus-panel.fresh { animation: fadeUp .5s cubic-bezier(0.16,1,0.3,1) both; }
+    }
+    @media (max-width: 1000px) {
+      .project-split { grid-template-columns: 1fr; gap: 28px; }
+      .focus-list { max-width: none; }
+    }
+
+    /* ─── v1: COMPACT COVERAGE (option A) ──────────── */
+    .section-coverage { padding: 80px 56px; }
+    .section-coverage h2 { margin-bottom: 14px; }
+    .coverage-lead { margin-bottom: 36px; }
+    .claims { margin-bottom: 36px; }
+    .claim { padding: 22px 12px 18px; min-height: 0; gap: 10px; }
+    .claim img { width: 48px; height: 48px; }
+    .cov-label { margin-bottom: 10px; }
+    .cov-row { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+    .cov-row .cov-tile {
+      min-height: 0; padding: 16px 16px 14px; border-radius: 10px;
+      display: block; background: var(--forest); color: #fff; text-decoration: none;
+    }
+    .cov-row .cov-mark { font-size: 36px; }
+    .cov-row .cov-name { font-size: 14px; font-weight: 500; margin: 10px 0 0; }
+    .cov-row .cov-tile.soon { background: white; color: var(--text); border: 1px solid var(--border); }
+    .cov-row .cov-tile.soon .cov-mark { color: var(--fern-mid); }
+    .cov-row .cov-tile.ask { background: transparent; color: var(--text); border: 1px dashed var(--fern-pale); }
+    .cov-row .cov-tile.ask .cov-mark { color: var(--fern-pale); }
+    .cov-row .cov-tile.ask:hover { border-style: solid; }
+    .cov-soon {
+      display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 600;
+      padding: 2px 8px; border-radius: 999px; background: #f6e7d4; color: #7a4a12;
+    }
+    .cov-nav { margin-top: 28px; display: flex; }
+    @media (max-width: 1000px) {
+      .section-coverage { padding: 64px 28px; }
+      .cov-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) { .cov-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   </style>
 </head>
 <body>
@@ -1519,48 +1616,60 @@
 
 <!-- TOP PROJECT (v1: ported from draft; "Cutting my costs" first and open) -->
 <section class="section-project" id="your-focus">
-  <div class="project-inner">
-    <h2 class="r">What's your top project right now?</h2>
-    <div class="project-options r d1">
-      <button type="button" class="project-option" id="opt-costs" data-project="costs" aria-expanded="true" aria-controls="panel-costs">
-        <span class="po-title">Cutting my costs</span>
-        <span class="po-sub">Outside counsel bills too much, and you can't get out of it.</span>
-      </button>
-      <button type="button" class="project-option" id="opt-surge" data-project="surge" aria-expanded="false" aria-controls="panel-surge">
-        <span class="po-title">Dealing with the surge</span>
-        <span class="po-sub">A layoff or closure brings a wave of letters and charges.</span>
-      </button>
-      <button type="button" class="project-option" id="opt-team" data-project="team" aria-expanded="false" aria-controls="panel-team">
-        <span class="po-title">Not killing my team</span>
-        <span class="po-sub">One charge lands and takes over legal, HR, and the business.</span>
-      </button>
-    </div>
-    <div class="project-panel wide" id="panel-costs" role="region" aria-labelledby="opt-costs">
-      <p class="pp-big">“Outside counsel is not cheap.”</p>
-      <p class="pp-big-attr">What in-house employment lawyers tell us first.</p>
-      <div class="ways">
-        <div class="way">
-          <h3>Use Fern in-house on your own matters.</h3>
-          <p>Bring the work back in. Fern reads the charge or letter, checks every allegation against your documents, and drafts the response for your review. Litigator-level work without the hourly bill.</p>
-          <button class="btn-lo-primary" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
-        </div>
-        <div class="way">
-          <h3>Law firms use Fern on your client matters.</h3>
-          <p>If the work goes out, your firm starts from the same checked facts you see. Less time on the file means a fixed fee is a fair thing to ask for.</p>
-          <a class="btn-lo-soft" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=law-firms" target="_blank" rel="noopener">Introduce us to your firm</a>
-        </div>
+  <div class="project-split">
+    <div class="project-left">
+      <h2 class="r">What's your <em>top project</em> right now?</h2>
+      <div class="focus-list r d1" role="group" aria-label="Choose your top project">
+        <button type="button" class="focus-option" data-focus="costs" aria-pressed="true" aria-controls="focus-costs">
+          <span class="fo-text"><span class="fo-title">Cutting my costs</span><span class="fo-sub">Outside counsel bills too much, and you can't get out of it</span></span>
+          <span class="fo-arrow" aria-hidden="true">→</span>
+        </button>
+        <button type="button" class="focus-option" data-focus="surge" aria-pressed="false" aria-controls="focus-surge">
+          <span class="fo-text"><span class="fo-title">Dealing with the surge</span><span class="fo-sub">A layoff or closure brings a wave of letters and charges</span></span>
+          <span class="fo-arrow" aria-hidden="true">→</span>
+        </button>
+        <button type="button" class="focus-option" data-focus="team" aria-pressed="false" aria-controls="focus-team">
+          <span class="fo-text"><span class="fo-title">Not killing my team</span><span class="fo-sub">One charge lands and takes over legal, HR, and the business</span></span>
+          <span class="fo-arrow" aria-hidden="true">→</span>
+        </button>
       </div>
     </div>
-    <div class="project-panel" id="panel-surge" role="region" aria-labelledby="opt-surge" hidden>
-      <p class="pp-quote">“I've probably done five demand letters already because they did a big RIF in May.”</p>
-      <p class="pp-body">When a layoff or closure sends letters in waves, Fern rebuilds what happened for each one from your documents, with every fact linked to its source. The fifth letter doesn't have to take as long as the first.</p>
-      <a class="pp-cta" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=surge" target="_blank" rel="noopener">See it on a sample charge →</a>
-    </div>
-    <div class="project-panel" id="panel-team" role="region" aria-labelledby="opt-team" hidden>
-      <p class="pp-quote">“Those tend to take a backseat when you're putting out other fires all day.”</p>
-      <p class="pp-body">When a charge lands, it pulls legal, HR, and the business into days of digging. Fern reads the file and builds the chronology, so you start from a checked picture of what happened and get back to everything else.</p>
-      <a class="pp-cta" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=team" target="_blank" rel="noopener">See it on a sample charge →</a>
-      <a class="pp-link" href="/charges/">How agency charges work</a>
+    <div class="project-right">
+      <div class="focus-panel" id="focus-costs">
+        <div class="fp-label">Cutting my costs</div>
+        <h3 class="fp-head">“Outside counsel is not cheap.”</h3>
+        <p class="fp-quote">What in-house employment lawyers tell us first. Two ways Fern changes that:</p>
+        <div class="fp-way">
+          <h4>Use Fern in-house on your own matters.</h4>
+          <p>Bring the work back in. Fern checks every allegation against your documents and drafts the response for your review.</p>
+          <button class="fp-cta" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
+        </div>
+        <div class="fp-way">
+          <h4>Law firms use Fern on your client matters.</h4>
+          <p>Your firm starts from the same checked facts you see. Less time on the file makes a fixed fee a fair ask.</p>
+          <a class="fp-jump" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=law-firms" target="_blank" rel="noopener">Introduce us to your firm</a>
+        </div>
+      </div>
+      <div class="focus-panel" id="focus-surge" hidden>
+        <div class="fp-label">Dealing with the surge</div>
+        <h3 class="fp-head">When a layoff brings the letters in waves.</h3>
+        <p class="fp-quote">“I've probably done five demand letters already because they did a big RIF in May.”</p>
+        <ol class="fp-steps"><li>Upload each letter with its documents.</li><li>Fern rebuilds what happened for each one, with every fact linked to its source.</li><li>You decide which to settle and which to fight.</li></ol>
+        <div class="fp-actions">
+          <a class="fp-cta" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=surge" target="_blank" rel="noopener">See it on a sample charge →</a>
+          <a class="fp-jump" href="#coverage">See what Fern covers</a>
+        </div>
+      </div>
+      <div class="focus-panel" id="focus-team" hidden>
+        <div class="fp-label">Not killing my team</div>
+        <h3 class="fp-head">When one charge takes over everyone's week.</h3>
+        <p class="fp-quote">“Those priorities tend to take a backseat when you're putting out other fires all day.”</p>
+        <ol class="fp-steps"><li>Drop in the charge and the file.</li><li>Fern builds the chronology and checks every allegation against your documents.</li><li>You decide the position and write the response.</li></ol>
+        <div class="fp-actions">
+          <a class="fp-cta" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=team" target="_blank" rel="noopener">See it on a sample charge →</a>
+          <a class="fp-jump" href="/charges/">How agency charges work</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1570,44 +1679,37 @@
 <section class="section-coverage" id="coverage">
   <div class="coverage-inner">
     <h2 class="r">Position statements and demand letter responses.</h2>
-    <p class="coverage-lead r d1">Fern reads the charge or letter, identifies the claims, checks every allegation against your documents, and drafts a complete, cite-checked response for your review.</p>
-    <div class="coverage-actions r d1"><a href="/charges/" class="btn-lo-primary">See how Fern handles agency charges →</a></div>
-
+    <p class="coverage-lead r d1">Fern reads the charge or letter, identifies the claims, checks every allegation against your documents, and drafts a cite-checked response for your review.</p>
     <div class="claims r">
       <div class="cov-label">Claims Fern handles</div>
       <ul class="claims-grid" role="list">
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 16h24v16H8z"/><path d="M6 10l4 6M34 10l-4 6M6 10h10l4 6M34 10H24l-4 6"/><path d="M16 22h8"/></svg><span>Wrongful termination</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14h14a7 7 0 0 1 0 14H14"/><path d="M17 9l-5 5 5 5"/></svg><span>Retaliation</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9h24a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H18l-7 6v-6H8a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2z"/><path d="M20 14v6"/><circle cx="20" cy="24" r=".6" fill="currentColor"/></svg><span>Sexual harassment</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="13" r="4"/><path d="M6 31v-3a8 8 0 0 1 16 0v3"/><circle cx="27" cy="13" r="4" fill="currentColor"/><path d="M20 22.5A8 8 0 0 1 35 28v3"/></svg><span>Race discrimination</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="16" r="7"/><path d="M15 23v10M11 29h8"/><circle cx="26" cy="22" r="7"/><path d="M31 17l5-5M31 12h5v5"/></svg><span>Sex and gender discrimination</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="7" r="2.5"/><path d="M20 11v10h8l3 8"/><path d="M20 15h7"/><path d="M15 17a8 8 0 1 0 11 10"/></svg><span>Disability and accommodation</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 6h18M11 34h18"/><path d="M13 6c0 8 7 9 7 14s-7 6-7 14M27 6c0 8-7 9-7 14s7 6 7 14"/><path d="M16 30h8"/></svg><span>Age discrimination</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11c-4-3-9-3-13-2v21c4-1 9-1 13 2 4-3 9-3 13-2V9c-4-1-9-1-13 2z"/><path d="M20 11v21"/></svg><span>Religious discrimination</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="20" r="8"/><circle cx="25" cy="20" r="8"/></svg><span>Sexual orientation and gender identity</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="28" height="25" rx="2"/><path d="M6 16h28M13 6v6M27 6v6"/><path d="M20 30s-6-3.5-6-7a3 3 0 0 1 6-1 3 3 0 0 1 6 1c0 3.5-6 7-6 7z"/></svg><span>Pregnancy and leave</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="20" r="13"/><path d="M7 20h26"/><path d="M20 7c4 4 5 8.5 5 13s-1 9-5 13c-4-4-5-8.5-5-13s1-9 5-13z"/></svg><span>National origin</span></li>
-        <li class="claim"><svg viewBox="0 0 40 40" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="20" r="13"/><path d="M20 12v8l5 3"/></svg><span>Wage and hour</span></li>
+        <li class="claim"><img src="./assets/icon-claim-wrongful-termination.svg" width="56" height="56" alt=""><span>Wrongful termination</span></li>
+        <li class="claim"><img src="./assets/icon-claim-retaliation.svg" width="56" height="56" alt=""><span>Retaliation</span></li>
+        <li class="claim"><img src="./assets/icon-claim-harassment.svg" width="56" height="56" alt=""><span>Sexual harassment</span></li>
+        <li class="claim"><img src="./assets/icon-claim-race.svg" width="56" height="56" alt=""><span>Race discrimination</span></li>
+        <li class="claim"><img src="./assets/icon-claim-sex-gender.svg" width="56" height="56" alt=""><span>Sex and gender discrimination</span></li>
+        <li class="claim"><img src="./assets/icon-claim-disability.svg" width="56" height="56" alt=""><span>Disability and accommodation</span></li>
+        <li class="claim"><img src="./assets/icon-claim-age.svg" width="56" height="56" alt=""><span>Age discrimination</span></li>
+        <li class="claim"><img src="./assets/icon-claim-religion.svg" width="56" height="56" alt=""><span>Religious discrimination</span></li>
+        <li class="claim"><img src="./assets/icon-claim-orientation.svg" width="56" height="56" alt=""><span>Sexual orientation and gender identity</span></li>
+        <li class="claim"><img src="./assets/icon-claim-pregnancy-leave.svg" width="56" height="56" alt=""><span>Pregnancy and leave</span></li>
+        <li class="claim"><img src="./assets/icon-claim-national-origin.svg" width="56" height="56" alt=""><span>National origin</span></li>
+        <li class="claim soon"><img src="./assets/icon-claim-wage-hour.svg" width="56" height="56" alt=""><span>Wage and hour</span><span class="claim-soon">Coming soon</span></li>
       </ul>
     </div>
 
 
     <div class="cov-group r">
-      <div class="cov-label">Available now</div>
-      <div class="cov-grid">
-        <a class="cov-tile" href="/charges/"><div class="cov-mark">EEOC</div><div><div class="cov-name">EEOC charges</div><div class="cov-desc">Charges filed with the U.S. Equal Employment Opportunity Commission.</div><span class="cov-more">How agency charges work →</span></div></a>
-        <a class="cov-tile" href="/charges/"><div class="cov-mark">CRD</div><div><div class="cov-name">CRD charges</div><div class="cov-desc">Charges filed with the California Civil Rights Department.</div><span class="cov-more">How agency charges work →</span></div></a>
-        <div class="cov-tile"><div class="cov-mark">CA</div><div><div class="cov-name">California demand letters</div><div class="cov-desc">Pre-litigation demand letters from plaintiff's counsel.</div></div></div>
+      <div class="cov-label">Jurisdictions</div>
+      <div class="cov-row">
+        <div class="cov-tile"><div class="cov-mark">EEOC</div><div class="cov-name">Charges</div></div>
+        <div class="cov-tile"><div class="cov-mark">CRD</div><div class="cov-name">Charges</div></div>
+        <div class="cov-tile"><div class="cov-mark">CA</div><div class="cov-name">Demand letters</div></div>
+        <div class="cov-tile soon"><div class="cov-mark">TX</div><div class="cov-name">Agency charges</div><span class="cov-soon">Coming soon</span></div>
+        <div class="cov-tile soon"><div class="cov-mark">NY</div><div class="cov-name">Agency charges</div><span class="cov-soon">Coming soon</span></div>
+        <a class="cov-tile ask" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=jurisdiction" target="_blank" rel="noopener"><div class="cov-mark">+</div><div class="cov-name">Ask about yours</div></a>
       </div>
-    </div>
-
-    <div class="cov-group r">
-      <div class="cov-label">Coming soon, and other jurisdictions on request</div>
-      <div class="cov-grid">
-        <div class="cov-tile soon"><div class="cov-mark">TX</div><div><div class="cov-name">Texas agency charges</div><div class="cov-desc">Texas Workforce Commission, Civil Rights Division.</div></div></div>
-        <div class="cov-tile soon"><div class="cov-mark">NY</div><div><div class="cov-name">New York agency charges</div><div class="cov-desc">New York State Division of Human Rights.</div></div></div>
-        <div class="cov-tile ask"><div class="cov-mark" style="color:var(--fern-pale)">+</div><div><div class="cov-name">Other jurisdictions</div><div class="cov-desc">Available on request.</div><a href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=jurisdiction" target="_blank" rel="noopener">Ask about your jurisdiction</a></div></div>
-      </div>
+      <div class="cov-nav"><a href="/charges/" class="btn-lo-primary">How agency charges work →</a></div>
     </div>
   </div>
 </section>
@@ -1732,7 +1834,7 @@
   <div class="legalops-inner">
     <div class="r">
       <div class="lo-kicker">For legal operations</div>
-      <h2>Start on Monday.<br><em>Not next quarter.</em></h2>
+      <h2>Start on Monday.</h2>
     </div>
     <div class="lo-grid r d1">
       <div class="lo-tile">
@@ -1963,22 +2065,31 @@
 </script>
 
 <script>
-/* Project selector: show the panel for the chosen project and record the pick. */
+/* Top project: stacked options on the left, matching panel on the right. */
 (function () {
-  var options = document.querySelectorAll('.project-option');
-  options.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var key = btn.getAttribute('data-project');
-      options.forEach(function (other) {
-        var on = other === btn;
-        other.setAttribute('aria-expanded', on ? 'true' : 'false');
-        var panel = document.getElementById('panel-' + other.getAttribute('data-project'));
-        if (panel) panel.hidden = !on;
-      });
+  var opts = document.querySelectorAll('.focus-option');
+  function choose(key, record) {
+    opts.forEach(function (o) {
+      var on = o.getAttribute('data-focus') === key;
+      o.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var p = document.getElementById('focus-' + o.getAttribute('data-focus'));
+      if (p) { p.hidden = !on; if (on) { p.classList.remove('fresh'); void p.offsetWidth; p.classList.add('fresh'); } }
+    });
+    if (record) {
       try {
         if (window.dataLayer) window.dataLayer.push({ event: 'project_select', project: key });
         if (typeof window.gtag === 'function') window.gtag('event', 'project_select', { project: key });
       } catch (e) {}
+    }
+  }
+  opts.forEach(function (o) {
+    o.addEventListener('click', function () {
+      var key = o.getAttribute('data-focus');
+      choose(key, true);
+      if (window.innerWidth <= 1000) {
+        var p = document.getElementById('focus-' + key);
+        if (p) p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 })();
