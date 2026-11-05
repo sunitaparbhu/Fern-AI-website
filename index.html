@@ -1366,6 +1366,11 @@
     .complaints-close .attr { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--muted); }
 
     /* ─── v1: GET FERN TWO WAYS ────────────────────── */
+    .section-p2p .ways { margin-top: 28px; max-width: 920px; }
+    .section-p2p .way { border: 1px solid var(--border); }
+    .section-p2p .way h3 { font-size: 26px; margin-bottom: 10px; }
+    .section-p2p .way p { margin-bottom: 18px; }
+    @media (max-width: 760px) { .section-p2p .ways { grid-template-columns: 1fr; } }
     .getfern { margin-top: 64px; }
     .getfern h3 {
       font-family: 'Newsreader', serif; font-weight: 400;
@@ -1819,13 +1824,25 @@
 </section>
 
 
-<!-- PILOT TO PRODUCTION (v1: from draft; copy adjusted for MCP waitlist) -->
+<!-- PILOT TO PRODUCTION: TWO WAYS (option C, merged) -->
 <section class="section-p2p">
   <div class="p2p-inner">
     <div class="p2p-kicker r">From pilot to production</div>
-    <h2 class="r d1">Rolled out AI, but haven't seen the return?</h2>
-    <p class="p2p-body r d2">Plenty of legal teams got started with Copilot or ChatGPT and stalled there. Fern takes one job, agency charges and demand letters, from pilot to production: running on your next matter in the Fern app today, and soon inside the AI you already have, with every fact checked against your documents.</p>
-    <a class="p2p-cta r d3" href="https://calendly.com/sunita-parbhu/1-1-15-mins?utm_source=website&amp;utm_content=pilot-to-production" target="_blank" rel="noopener">See it on a sample charge →</a>
+    <h2 class="r d1">Your company already has AI. Here are two ways to get one job working.</h2>
+    <div class="ways r d2">
+      <div class="way">
+        <span class="way-tag">Available now</span>
+        <h3>The Fern app</h3>
+        <p>Bring your next charge or demand letter and run it end to end in your browser.</p>
+        <button class="btn-lo-primary" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
+      </div>
+      <div class="way">
+        <span class="way-tag wait">Waitlist</span>
+        <h3>Inside your company's AI</h3>
+        <p>Use Fern from the AI assistant your company already has.</p>
+        <button class="btn-lo-soft" style="cursor:pointer" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Join the waitlist</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1861,25 +1878,6 @@
         </ul>
       </div>
     </div>
-    <div class="getfern r d2">
-      <h3>Get Fern two ways.</h3>
-      <div class="ways">
-        <div class="way">
-          <span class="way-tag">Available now</span>
-          <h3>The Fern app</h3>
-          <p>Live in a day in your browser. Bring your next charge or demand letter and run it end to end.</p>
-          <button class="btn-lo-primary" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Request a Trial →</button>
-        </div>
-        <div class="way">
-          <span class="way-tag wait">Waitlist</span>
-          <h3>Fern MCP for your enterprise AI</h3>
-          <p>Use Fern inside the AI your company already has: Microsoft Copilot, Claude or ChatGPT.</p>
-          <button class="btn-lo-soft" style="cursor:pointer" data-tally-open="0QDaeQ" data-tally-layout="modal" data-tally-emoji-animation="wave" data-tally-auto-close="2000">Join the waitlist</button>
-        </div>
-      </div>
-      <div class="lo-cta">
-        <a href="https://calendly.com/sunita-parbhu/1-1-15-mins?" target="_blank" rel="noopener" class="btn-lo-soft">Speak with us</a>
-      </div>
     </div>
   </div>
 </section>
@@ -1973,27 +1971,6 @@
 </section>
 
 
-<!-- BUILD -->
-<section class="section-build">
-  <div class="build-inner">
-    <div class="r">
-      <h2>Tell us what you need next.</h2>
-      <p>Have a workflow we haven't solved yet?</p>
-      <p>Want to shape the product as a Customer Advisory Board member? Early access, direct roadmap input, and a seat at the table.</p>
-    </div>
-    <div class="r d1">
-      <iframe
-        data-tally-src="https://tally.so/embed/NpRRAj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-        loading="lazy" width="100%" height="400" frameborder="0"
-        marginheight="0" marginwidth="0" title="Build What's Next"
-        style="background:transparent;border:none;"
-      ></iframe>
-      <p class="build-note">We read every submission. If you're interested in the Advisory Board, we'll follow up directly.</p>
-    </div>
-  </div>
-</section>
-
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -2012,6 +1989,7 @@
           <a href="/charges/" class="footer-link">Agency Charges</a>
           <a href="https://learnwithfern.substack.com" target="_blank" rel="noopener" class="footer-link">Newsletter</a>
           <a href="https://calendly.com/sunita-parbhu/1-1-15-mins?" target="_blank" rel="noopener" class="footer-link">Contact</a>
+          <a href="https://tally.so/r/NpRRAj" target="_blank" rel="noopener" class="footer-link" data-tally-open="NpRRAj" data-tally-layout="modal" data-tally-emoji-animation="wave">Join our advisory board</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-heading">Legal</div>
